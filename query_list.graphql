@@ -1,0 +1,189 @@
+# Write your query or mutation here
+query getStudents{
+  students{
+    data{
+      id
+      name
+      age
+      created_at
+      updated_at
+    }
+  }
+}
+
+query getStudentById{
+  student(
+      id: "1"  ##required
+    ){
+    id
+    name
+    age
+    created_at
+    updated_at
+  }
+}
+
+query getTeachers{
+  teachers{
+    data{
+      id
+      name
+      age
+      updated_at
+      created_at
+    }
+  }
+}
+
+query getTeacherById{
+  teacher(
+      id: "1"  ##required
+    ){
+    id
+    name
+    age
+    created_at
+    updated_at
+  }
+}
+
+query getClassrooms{
+  classrooms{
+    data{
+      id
+      name
+      description
+      created_at
+      updated_at
+    }
+  }
+}
+
+query getClassroomById{
+  classroom(
+      id: "1"  ##required
+    ){
+    id
+    name
+    description
+    created_at
+    updated_at
+  }
+}
+
+mutation createStudent{
+  createStudent(input:{
+    name: "Steven", ##required
+    age: 20,  ##required
+  }){
+    id
+    name
+    age
+    created_at
+    updated_at
+  }
+}
+
+mutation updateStudent{
+  updateStudent(input:{
+    id: "3",  ##required
+    name: "Steven Sanjaya",
+    age: 20,
+  }){
+    id
+    name
+    age
+    created_at
+    updated_at
+  }
+}
+
+mutation deleteStudent{
+  deleteStudent(
+      id: "1"  ##required
+    ){
+    id
+    name
+    age
+    created_at
+    updated_at
+  }
+}
+
+mutation createTeacher{
+  createTeacher(input:{
+    name: "Irvan Sajoni",  ##required
+    age: 19,  ##required
+  }){
+    id
+    name
+    age
+    created_at
+    updated_at
+  }
+}
+
+mutation updateTeacher{
+  updateTeacher(input:{
+    id: "1",  ##required
+    name: "Steven Sanjaya",
+    age: 20,
+  }){
+    id
+    name
+    age
+    created_at
+    updated_at
+  }
+}
+
+mutation deleteTeacher{
+  deleteTeacher(
+    id: "1"  ##required
+  ){
+    id
+    name
+    age
+    created_at
+    updated_at
+  }
+}
+
+mutation createClassroom{
+  createClassroom(input:{
+    name: "Kelas A",  ##required
+    description: "Kelas untuk menggambar",  ##required
+  }){
+    id
+    name
+    description
+    created_at
+    updated_at
+  }
+}
+
+mutation updateClassroom{
+  updateClassroom(input: {
+    id: "1",  ##required
+    name: "Kelas F",
+    description: "Kelas apa ini",
+  }){
+    id
+    name
+    description
+    updated_at
+    created_at
+  }
+}
+
+mutation deleteClassroom{
+  deleteClassroom(
+      id: "1"  ##required
+    ){
+    id
+    name
+    description
+    created_at
+    updated_at
+  }
+}
